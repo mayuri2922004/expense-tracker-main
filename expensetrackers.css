@@ -1,0 +1,201 @@
+/* Reset and box-sizing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Theme variables */
+:root {
+  --bg-color: #fff;
+  --container-bg: #9fa3d8;
+  --text-color: #333;
+  --box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+:root.dark {
+  --bg-color: #121212;
+  --container-bg: #1e1e1e;
+  --text-color: #e0e0e0;
+  --box-shadow: rgba(255, 255, 255, 0.05) 0px 4px 12px;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  background-color: var(--container-bg);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  margin-top: 20px;
+}
+
+h1, h2, h3, h4 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.inc-exp-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  padding: 10px;
+  background-color: var(--bg-color);
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+}
+
+.inc-exp-container > div {
+  width: 48%;
+  text-align: center;
+}
+
+.money-plus {
+  color: #2ecc71;
+}
+
+.money-minus {
+  color: #e74c3c;
+}
+
+.form-control {
+  margin: 10px 0;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #9c88ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #3c12f8;
+}
+
+.list {
+  list-style: none;
+  max-height: 200px;
+  overflow-y: auto;
+  margin: 20px 0;
+  padding: 0;
+}
+
+.list li {
+  background: var(--bg-color);
+  color: var(--text-color);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-right: 5px solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+  position: relative;
+  border-radius: 5px;
+}
+
+.list li.plus {
+  border-color: #2ecc71;
+}
+
+.list li.minus {
+  border-color: #e74c3c;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Toggle Switch */
+.theme-toggle {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 6px;
+}
+
+.slider .theme-icon {
+  transition: transform 0.4s ease, margin-left 0.4s ease;
+  font-size: 18px;
+}
+
+input:checked + .slider {
+  background-color: #9c88ff;
+  justify-content: flex-end;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+.theme-icon {
+  transition: transform 0.3s ease;
+}
+
+input:checked ~ .theme-icon {
+  transform: rotate(180deg);
+}
